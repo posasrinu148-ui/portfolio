@@ -1,20 +1,19 @@
 {
-  "name": "sreenivasulu-portfolio",
+  "name": "portfolio-api",
   "private": true,
   "version": "1.0.0",
-  "description": "Personal developer portfolio for P. Sreenivasulu",
-  "workspaces": [
-    "client",
-    "server"
-  ],
+  "type": "module",
   "scripts": {
-    "dev": "concurrently -n web,api -c green,cyan \"npm:dev:web\" \"npm:dev:api\"",
-    "dev:web": "npm --prefix client run dev",
-    "dev:api": "npm --prefix server run dev",
-    "build": "npm --prefix client run build",
-    "start": "npm --prefix server run start"
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "seed": "node src/seed.js"
   },
-  "devDependencies": {
-    "concurrently": "^9.1.2"
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "mongoose": "^8.9.5"
   }
 }
